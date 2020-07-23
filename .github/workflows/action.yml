@@ -10,3 +10,4 @@ jobs:
         uses: 'rchougule/action-setup@initial_release'
         with:
           port: 9999
+        run: 'npm install'
