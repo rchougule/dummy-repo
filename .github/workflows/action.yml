@@ -1,0 +1,12 @@
+name: 'random package'
+on: [push]
+
+jobs:
+  build:
+    name: 'some job name'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'first step of req deb'
+        uses: 'rchougule/action-setup@initial-release'
+        with:
+          port: 9999
