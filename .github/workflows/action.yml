@@ -9,4 +9,4 @@ jobs:
       - name: 'first step of req deb'
         uses: 'rchougule/action-setup@initial_release'
         with:
-          port: 9999
+          port: 9998
