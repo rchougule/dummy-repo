@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'first step of req deb'
-        uses: 'rchougule/action-setup@v1'
+        uses: 'rchougule/action-setup@c6fad83'
         with:
           port: 9998
