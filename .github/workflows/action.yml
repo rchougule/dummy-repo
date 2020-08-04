@@ -6,7 +6,7 @@ jobs:
     name: 'some job name'
     runs-on: ubuntu-latest
     steps:
-      - name: 'first step of req deb'
+      - name: 'fetching local'
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
@@ -17,5 +17,7 @@ jobs:
           build-name: 'some build name'
           project-name: 'some project name'
           local-args: 'some args one two three'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
       - name: 'run kuch to'
         run: 'node index.js'
