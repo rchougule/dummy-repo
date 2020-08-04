@@ -7,6 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'first step of req deb'
-        uses: 'rchougule/action-setup@v2'
+        uses: 'rchougule/local-action@master'
         with:
-          port: 9998
+          local-testing: 'start'
+          local-logging-level: 'some level'
+          local-identifier: 'some identifier'
+          username: 'fake username'
+          access-key: 'fake accesskey'
+          build-name: 'some build name'
+          project-name: 'some project name'
+          local-args: 'some args one two three'
+      - name: 'run kuch to'
+        run: 'node index.js'
