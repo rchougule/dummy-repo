@@ -2,9 +2,47 @@ name: 'random package'
 on: [push]
 
 jobs:
-  build:
-    name: 'some job name'
+  ubuntu-job:
+    name: 'ubuntu job'
     runs-on: ubuntu-latest
+    steps:
+      - name: 'fetching local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: 'start'
+          local-logging-level: 'some level'
+          local-identifier: 'some identifier'
+          username: 'fake username'
+          access-key: 'fake accesskey'
+          build-name: 'some build name'
+          project-name: 'some project name'
+          local-args: 'some args one two three'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
+      - name: 'run kuch to'
+        run: 'node index.js'
+  macos-job:
+    name: 'macos job'
+    runs-on: macos-latest
+    steps:
+      - name: 'fetching local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: 'start'
+          local-logging-level: 'some level'
+          local-identifier: 'some identifier'
+          username: 'fake username'
+          access-key: 'fake accesskey'
+          build-name: 'some build name'
+          project-name: 'some project name'
+          local-args: 'some args one two three'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
+      - name: 'run kuch to'
+        run: 'node index.js'
+  windows-job:
+    name: 'windows job'
+    runs-on: windows-latest
     steps:
       - name: 'fetching local'
         uses: 'rchougule/local-action@master'
