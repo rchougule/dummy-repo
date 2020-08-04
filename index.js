@@ -1,4 +1,4 @@
-// random commit #3
+// random commit #random
 
 console.log("CHECK FOR THE SET ENV VARIABLES");
 console.log(process.env.BROWSERSTACK_USERNAME);
