@@ -14,7 +14,6 @@ jobs:
           local-identifier: 'some identifier'
           username: 'fake username'
           access-key: 'fake accesskey'
-          build-name: 'some build name'
           project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
