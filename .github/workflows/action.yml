@@ -49,7 +49,7 @@ jobs:
       - name: 'fetching local'
         uses: 'rchougule/local-action@master'
         with:
-          local-testing: 'something else'
+          local-testing: 'false'
           local-logging-level: 'false'
           local-identifier: 'some identifier'
           build-name: 'META#-this is windows'
