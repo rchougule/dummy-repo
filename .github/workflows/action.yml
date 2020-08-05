@@ -1,5 +1,5 @@
 name: 'random package'
-on: [push]
+on: [push, pull_request]
 
 jobs:
   ubuntu-job:
