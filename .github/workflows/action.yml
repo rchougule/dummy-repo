@@ -14,7 +14,6 @@ jobs:
           local-identifier: 'some identifier'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
@@ -34,7 +33,6 @@ jobs:
           local-identifier: 'some identifier'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
@@ -54,7 +52,6 @@ jobs:
           local-identifier: 'some identifier'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'

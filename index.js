@@ -15,6 +15,7 @@ var capabilities = {
   'browserName': 'chrome',
   'os': 'os x',
   'build': process.env.BROWSERSTACK_BUILD_NAME,
+  'project': process.env.BROWSERSTACK_PROJECT_NAME,
   'os_version': 'high sierra',
   'browserstack.user': process.env.BROWSERSTACK_USERNAME,
   'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY
