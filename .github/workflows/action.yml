@@ -12,13 +12,14 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
-          username: 'fake username'
-          access-key: 'fake accesskey'
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'run kuch to'
+        run: 'npm install selenium-webdriver'
         run: 'node index.js'
   macos-job:
     name: 'macos job'
@@ -30,14 +31,14 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
-          username: 'fake username'
-          access-key: 'fake accesskey'
-          build-name: 'some build name'
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'run kuch to'
+        run: 'npm install selenium-webdriver'
         run: 'node index.js'
   windows-job:
     name: 'windows job'
@@ -49,12 +50,12 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
-          username: 'fake username'
-          access-key: 'fake accesskey'
-          build-name: 'some build name'
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           project-name: 'some project name'
           local-args: 'some args one two three'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'run kuch to'
+        run: 'npm install -g selenium-webdriver'
         run: 'node index.js'
