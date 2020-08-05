@@ -29,7 +29,7 @@ jobs:
       - name: 'fetching local'
         uses: 'rchougule/local-action@master'
         with:
-          local-testing: 'start'
+          local-testing: 'stop'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
           build-name: 'this is mac os-META#'
@@ -49,7 +49,7 @@ jobs:
       - name: 'fetching local'
         uses: 'rchougule/local-action@master'
         with:
-          local-testing: 'start'
+          local-testing: 'something else'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
           build-name: 'META#-this is windows'
