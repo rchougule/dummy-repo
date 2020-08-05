@@ -10,7 +10,7 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'setup-logs'
+          local-logging-level: 'setup-logssss'
           local-identifier: 'some identifier'
           build-name: 'this is my ubuntu-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
