@@ -12,6 +12,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
+          build-name: 'this is my ubuntu-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: 'some args one two three'
@@ -31,6 +32,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
+          build-name: 'this is mac os-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: 'some args one two three'
@@ -50,6 +52,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'some level'
           local-identifier: 'some identifier'
+          build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: 'some args one two three'
