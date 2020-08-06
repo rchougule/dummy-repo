@@ -24,6 +24,17 @@ jobs:
         run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
         run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: stop
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          local-identifier: random
+          build-name: 'jinga'
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node index.js'
   macos-job:
     name: 'macos job'
     runs-on: macos-latest
@@ -45,6 +56,17 @@ jobs:
       - name: 'running http-server'
         run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
+        run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: stop
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          local-identifier: random
+          build-name: 'jinga'
+          local-args: 'doesnt matter'
+      - name: 'running test again'
         run: 'node index.js'
   windows-job:
     name: 'windows job'
