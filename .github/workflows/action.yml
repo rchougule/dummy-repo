@@ -15,7 +15,7 @@ jobs:
           build-name: 'this is my ubuntu-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: '--proxy-host hostname --proxy-port portname --only-automate --daemon start --key jinga --local-identifier this-is-mine'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'install selenium webdriver'
@@ -35,7 +35,7 @@ jobs:
           build-name: 'this is mac os-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: '--proxy-host hostname --proxy-port portname --only-automate --daemon start --key jinga --local-identifier this-is-mine'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'install selenium webdriver'
@@ -55,7 +55,7 @@ jobs:
           build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: '--proxy-host hostname --proxy-port portname --only-automate --daemon start --key jinga --local-identifier this-is-mine'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'install selenium webdriver'
