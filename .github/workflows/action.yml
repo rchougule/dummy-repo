@@ -29,7 +29,7 @@ jobs:
       - name: 'fetching local'
         uses: 'rchougule/local-action@master'
         with:
-          local-testing: 'stop'
+          local-testing: 'start'
           local-logging-level: network-logs
           local-identifier: 'random'
           build-name: 'this is mac os-META#'
