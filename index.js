@@ -1,13 +1,4 @@
-// random commit #random 38
-
-console.log("CHECK FOR THE SET ENV VARIABLES");
-console.log(process.env.BROWSERSTACK_USERNAME);
-console.log(process.env.BROWSERSTACK_ACCESS_KEY);
-console.log(process.env.BROWSERSTACK_LOCAL_IDENTIFIER);
-console.log(process.env.BROWSERSTACK_BUILD_NAME);
-console.log(process.env.BROWSERSTACK_PROJECT_NAME);
-console.log(process.env.PATH.split(';')[0]);
-
+// random commit #random 39
 var webdriver = require('selenium-webdriver');
 
 // Input capabilities
