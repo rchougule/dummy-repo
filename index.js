@@ -1,4 +1,4 @@
-// random commit #random 35
+// random commit #random 36
 
 console.log("CHECK FOR THE SET ENV VARIABLES");
 console.log(process.env.BROWSERSTACK_USERNAME);
@@ -27,7 +27,7 @@ var driver = new webdriver.Builder()
   .withCapabilities(capabilities)
   .build();
 
-driver.get('http://localhost:45454').then(function () {
+driver.get('http://localhost:8099').then(function () {
   driver.getTitle().then(function (title) {
     console.log(title);
     driver.quit();
