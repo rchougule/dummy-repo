@@ -34,7 +34,7 @@ jobs:
           build-name: 'jinga'
           local-args: 'doesnt matter'
       - name: 'running test again'
-        run: 'node index.js'
+        run: 'node another.js'
   macos-job:
     name: 'macos job'
     runs-on: macos-latest
@@ -67,7 +67,7 @@ jobs:
           build-name: 'jinga'
           local-args: 'doesnt matter'
       - name: 'running test again'
-        run: 'node index.js'
+        run: 'node another.js'
   windows-job:
     name: 'windows job'
     runs-on: windows-latest
