@@ -1,0 +1,23 @@
+{
+  "name": "dummy-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchougule/dummy-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchougule/dummy-repo/issues"
+  },
+  "homepage": "https://github.com/rchougule/dummy-repo#readme",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
+}

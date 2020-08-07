@@ -1,5 +1,5 @@
 name: 'random package'
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   ubuntu-job:
@@ -10,17 +10,30 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'some level'
-          local-identifier: 'some identifier'
+          local-logging-level: all-logs
+          build-name: 'this is my ubuntu-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: 'some args one two three'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
-      - name: 'install selenium webdriver'
-        run: 'npm install selenium-webdriver'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
         run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: stop
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          local-identifier: random
+          build-name: 'jinga'
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node another.js'
   macos-job:
     name: 'macos job'
     runs-on: macos-latest
@@ -29,17 +42,30 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'some level'
-          local-identifier: 'some identifier'
+          local-identifier: 'random'
+          build-name: 'this is mac os-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: 'some args one two three'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
-      - name: 'install selenium webdriver'
-        run: 'npm install selenium-webdriver'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
         run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: stop
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          local-identifier: random
+          build-name: 'jinga'
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node another.js'
   windows-job:
     name: 'windows job'
     runs-on: windows-latest
@@ -48,14 +74,26 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'some level'
-          local-identifier: 'some identifier'
+          local-logging-level: 'false'
+          local-identifier: random doesnt matter i think
+          build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-args: 'some args one two three'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
-      - name: 'install selenium webdriver'
-        run: 'npm install selenium-webdriver'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
         run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/local-action@master'
+        with:
+          local-testing: 'stop'
+          local-logging-level: 'all-logs'
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: 'running test again'
+        run: 'node another.js'
