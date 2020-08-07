@@ -96,3 +96,5 @@ jobs:
           local-logging-level: 'all-logs'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: 'running test again'
+        run: 'node another.js'
