@@ -43,7 +43,6 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: network-logs
           local-identifier: 'random'
           build-name: 'this is mac os-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -76,7 +75,7 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'all-logs'
+          local-logging-level: 'false'
           local-identifier: random doesnt matter i think
           build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
