@@ -1,4 +1,4 @@
-// random commit #random 59
+// random commit #random 60
 var webdriver = require('selenium-webdriver');
 
 // Input capabilities
