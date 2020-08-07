@@ -11,7 +11,6 @@ jobs:
         with:
           local-testing: 'start'
           local-logging-level: all-logs
-          local-identifier: 'some identifier'
           build-name: 'this is my ubuntu-META#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
