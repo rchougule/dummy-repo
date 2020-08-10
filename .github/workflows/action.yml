@@ -74,8 +74,8 @@ jobs:
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
-          local-logging-level: 'false'
-          local-identifier: random doesnt matter i think
+          local-logging-level: 'all-logs'
+          local-identifier: random
           build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
