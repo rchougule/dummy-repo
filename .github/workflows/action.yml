@@ -9,9 +9,9 @@ jobs:
       - name: 'Fetching Local'
         uses: 'rchougule/local-action@master'
         with:
-          local-testing: 'start'
+          local-testing: start
           local-logging-level: all-logs
-          build-name: 'this is my ubuntu-META#'
+          build-name: meta#
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -29,9 +29,9 @@ jobs:
           local-testing: stop
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          local-identifier: random
-          build-name: 'jinga'
-          local-args: 'doesnt matter'
+          # local-identifier: random
+          # build-name: 'jinga'
+          # local-args: 'doesnt matter'
       - name: 'running test again'
         run: 'node another.js'
   macos-job:
@@ -43,7 +43,7 @@ jobs:
         with:
           local-testing: 'start'
           local-identifier: 'random'
-          build-name: 'this is mac os-META#'
+          build-name: 'MacOS build-meta#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -76,7 +76,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'false'
           local-identifier: random doesnt matter i think
-          build-name: 'META#-this is windows'
+          build-name: 'meta#-windows-build'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
