@@ -8,7 +8,8 @@ var capabilities = {
   'build': process.env.BROWSERSTACK_BUILD_NAME,
   'project': process.env.BROWSERSTACK_PROJECT_NAME,
   'os_version': 'high sierra',
-  'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
+  'browserstack.local': 'true',
+//  'browserstack.localIdentifier': process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
   'browserstack.user': process.env.BROWSERSTACK_USERNAME,
   'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY
 }
