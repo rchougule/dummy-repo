@@ -1,5 +1,25 @@
 // random commit #random 63
 var webdriver = require('selenium-webdriver');
+var http = require('http');
+
+const options = {
+  host: 'localhost',
+  port: 8099,
+  method: 'GET'
+}
+
+const response = [];
+
+http.request(options, (res) => {
+
+  res.on('data', (chunk) => {
+    response.push(chunk);
+  });
+
+  res.on('end', () => {
+    console.log(Buffer.concat(response).toString());
+  })
+});
 
 // Input capabilities
 var capabilities = {
