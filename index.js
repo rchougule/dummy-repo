@@ -19,7 +19,7 @@ http.request(options, (res) => {
   res.on('end', () => {
     console.log(Buffer.concat(response).toString());
   })
-});
+}).end();
 
 // Input capabilities
 var capabilities = {
