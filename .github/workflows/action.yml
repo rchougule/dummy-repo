@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
           local-logging-level: all-logs
@@ -24,7 +24,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: stop
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -39,7 +39,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
           local-identifier: 'random'
@@ -56,7 +56,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: stop
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -71,7 +71,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
           local-logging-level: 'all-logs'
@@ -85,11 +85,11 @@ jobs:
       - name: 'running npm install'
         run: 'npm install'
       - name: 'running http-server'
-        run: './node_modules/.bin/forever start ./node_modules/.bin/http-server -p 8099'
+        run: './node_modules/.bin/http-server -p 8099 &'
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'stop'
           local-logging-level: 'all-logs'
