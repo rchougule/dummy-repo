@@ -6,7 +6,7 @@ jobs:
     name: 'Ubuntu Job'
     runs-on: ubuntu-latest
     steps:
-      - name: 'fetching local'
+      - name: 'Fetching Local'
         uses: 'rchougule/local-action@master'
         with:
           local-testing: 'start'
