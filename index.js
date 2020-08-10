@@ -9,7 +9,8 @@ var capabilities = {
   'project': process.env.BROWSERSTACK_PROJECT_NAME,
   'os_version': 'high sierra',
   'browserstack.user': process.env.BROWSERSTACK_USERNAME,
-  'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY
+  'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
+  'browserstack.local': 'true'
 }
 
 if (process.env.BROWSERSTACK_LOCAL_IDENTIFIER) {
