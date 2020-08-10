@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   ubuntu-job:
-    name: 'ubuntu job'
+    name: 'Ubuntu Job'
     runs-on: ubuntu-latest
     steps:
       - name: 'fetching local'
@@ -35,7 +35,7 @@ jobs:
       - name: 'running test again'
         run: 'node another.js'
   macos-job:
-    name: 'macos job'
+    name: 'Mac OS Job'
     runs-on: macos-latest
     steps:
       - name: 'fetching local'
@@ -67,7 +67,7 @@ jobs:
       - name: 'running test again'
         run: 'node another.js'
   windows-job:
-    name: 'windows job'
+    name: 'Windows Job'
     runs-on: windows-latest
     steps:
       - name: 'fetching local'
