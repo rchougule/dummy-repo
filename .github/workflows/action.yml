@@ -15,8 +15,6 @@ jobs:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
-      - name: 'Print local-identifier'
-        run: 'printenv BROWSERSTACK_LOCAL_IDENTIFIER'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'running npm install'
