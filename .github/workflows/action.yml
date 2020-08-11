@@ -11,7 +11,7 @@ jobs:
         with:
           local-testing: 'start'
           local-logging-level: all-logs
-          build-name: 'this is my ubuntu-MeTA#'
+          build-name: 'this is my ubuntu- build_inFO'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -43,7 +43,7 @@ jobs:
         with:
           local-testing: 'start'
           local-identifier: 'random'
-          build-name: 'this is mac os-meta#'
+          build-name: 'this is - build_info- mac os'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -76,7 +76,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: 'all-logs'
           local-identifier: random
-          build-name: 'META#-this is windows'
+          build-name: 'build_info'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
