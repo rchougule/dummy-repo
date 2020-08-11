@@ -8,18 +8,18 @@ const options = {
   method: 'GET'
 }
 
-const response = [];
+// const response = [];
 
-http.request(options, (res) => {
+// http.request(options, (res) => {
 
-  res.on('data', (chunk) => {
-    response.push(chunk);
-  });
+//   res.on('data', (chunk) => {
+//     response.push(chunk);
+//   });
 
-  res.on('end', () => {
-    console.log(Buffer.concat(response).toString());
-  })
-}).end();
+//   res.on('end', () => {
+//     console.log(Buffer.concat(response).toString());
+//   })
+// }).end();
 
 // Input capabilities
 var capabilities = {
