@@ -1,12 +1,12 @@
 // random commit #random 63
 var webdriver = require('selenium-webdriver');
-var http = require('http');
+// var http = require('http');
 
-const options = {
-  host: 'localhost',
-  port: 8099,
-  method: 'GET'
-}
+// const options = {
+//   host: 'localhost',
+//   port: 8099,
+//   method: 'GET'
+// }
 
 // const response = [];
 
