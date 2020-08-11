@@ -1,5 +1,5 @@
 name: 'random package'
-on: [push, pull_request]
+on: [push, pull_request, release]
 
 jobs:
   ubuntu-job:
@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
           local-logging-level: all-logs
-          build-name: 'this is my ubuntu-META#'
+          build-name: 'this is my ubuntu-MeTA#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -24,7 +24,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: stop
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -39,11 +39,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
           local-identifier: 'random'
-          build-name: 'this is mac os-META#'
+          build-name: 'this is mac os-meta#'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
@@ -56,7 +56,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: stop
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -71,11 +71,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: 'fetching local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'start'
-          local-logging-level: 'false'
-          local-identifier: random doesnt matter i think
+          local-logging-level: 'all-logs'
+          local-identifier: random
           build-name: 'META#-this is windows'
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
@@ -89,7 +89,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action@master'
+        uses: 'rchougule/local-action@add_unit_tests'
         with:
           local-testing: 'stop'
           local-logging-level: 'all-logs'
