@@ -6,12 +6,12 @@ jobs:
     name: 'ubuntu job'
     runs-on: ubuntu-latest
     steps:
-      - name: 'setting local env'
-        uses: 'rchougule/local-action@split_actions'
-        with:
-          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-          build-name: 'this is my ubuntu- build_inFO'
-          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      # - name: 'setting local env'
+      #   uses: 'rchougule/local-action@split_actions'
+      #   with:
+      #     username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+      #     build-name: 'this is my ubuntu- build_inFO'
+      #     access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
         uses: rchougule/local-action/setup-local@split_actions
         with:
