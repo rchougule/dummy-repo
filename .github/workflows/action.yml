@@ -16,7 +16,8 @@ jobs:
         uses: rchougule/local-action/setup-local@split_actions
         with:
           local-testing: 'start'
-          # local-logging-level: all-logs
+          local-logging-level: all-logs
+          local-identifier: 'random'
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
