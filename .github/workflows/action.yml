@@ -17,7 +17,7 @@ jobs:
         with:
           local-testing: 'start'
           local-logging-level: all-logs
-          local-identifier: 'random'
+          local-identifier: 'some string'
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
