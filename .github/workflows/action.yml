@@ -11,11 +11,11 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
-          # access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
         uses: rchougule/local-action/setup-local@split_actions
         with:
-          local-testing: 'start'
+          local-testing: 'jinga'
           local-logging-level: all-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
@@ -81,7 +81,7 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/local-action/setup-local@split_actions
         with:
-          # local-testing: 'start'
+          local-testing: 'start'
           local-logging-level: setup-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
