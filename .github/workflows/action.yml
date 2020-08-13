@@ -18,7 +18,7 @@ jobs:
           local-testing: 'start'
           local-logging-level: all-logs
           local-identifier: 'some string'
-          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
       - name: 'running npm install'
