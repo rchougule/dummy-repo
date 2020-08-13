@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'setting local env'
-        uses: 'rchougule/local-action/setup-env@split_actions'
+        uses: 'rchougule/local-action@split_actions'
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
