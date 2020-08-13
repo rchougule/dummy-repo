@@ -44,12 +44,12 @@ jobs:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is mac -- build_info -- os'
           project-name: 'some project name'
-          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          # access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
         uses: rchougule/local-action/setup-local@split_actions
         with:
           local-testing: 'start'
-          local-logging-level: network-logs
+          local-logging-level: false
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
@@ -81,8 +81,8 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/local-action/setup-local@split_actions
         with:
-          local-testing: 'start'
-          local-logging-level: all-logs
+          # local-testing: 'start'
+          local-logging-level: setup-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
