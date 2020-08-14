@@ -50,6 +50,7 @@ jobs:
         uses: rchougule/github-actions/setup-local@master
         with:
           local-testing: 'start'
+          local-identifier: random
           local-logging-level: false
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
@@ -83,6 +84,7 @@ jobs:
         uses: rchougule/github-actions/setup-local@master
         with:
           local-testing: 'start'
+          local-identifier: random
           local-logging-level: setup-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
       - name: 'checkout the repository'
