@@ -13,7 +13,7 @@ jobs:
           build-name: 'this is my ubuntu- build_inFO'
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: rchougule/github-actions/setup-local@master
+        uses: rchougule/github-actions/setup-local@binary_check
         with:
           local-testing: 'start'
           local-logging-level: all-logs
@@ -28,13 +28,13 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
           local-args: 'doesnt matter'
       - name: 'stopping local again'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
@@ -48,7 +48,7 @@ jobs:
           build-name: 'this is my ubuntu- build_inFO'
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: rchougule/github-actions/setup-local@master
+        uses: rchougule/github-actions/setup-local@binary_check
         with:
           local-testing: 'start'
           local-logging-level: all-logs
@@ -63,13 +63,13 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
           local-args: 'doesnt matter'
       - name: 'stopping local again'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
@@ -88,7 +88,7 @@ jobs:
           project-name: 'some project name'
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: rchougule/github-actions/setup-local@master
+        uses: rchougule/github-actions/setup-local@binary_check
         with:
           local-testing: 'start'
           local-identifier: random
@@ -103,7 +103,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
@@ -122,7 +122,7 @@ jobs:
           project-name: REPO_NAME
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: rchougule/github-actions/setup-local@master
+        uses: rchougule/github-actions/setup-local@binary_check
         with:
           local-testing: 'start'
           local-identifier: random
@@ -137,7 +137,7 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@binary_check'
         with:
           local-testing: stop
           local-identifier: random
