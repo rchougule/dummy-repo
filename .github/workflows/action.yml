@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'setting local env'
-        uses: 'rchougule/local-action@split_actions'
+        uses: 'rchougule/github-actions@master'
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: rchougule/local-action/setup-local@split_actions
+        uses: rchougule/github-actions/setup-local@master
         with:
           local-testing: 'start'
           local-logging-level: all-logs
@@ -28,76 +28,76 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'rchougule/local-action/setup-local@split_actions'
+        uses: 'rchougule/github-actions/setup-local@master'
         with:
           local-testing: stop
           local-identifier: random
           local-args: 'doesnt matter'
       - name: 'running test again'
         run: 'node another.js'
-  # macos-job:
-  #   name: 'macos job'
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: 'setting local env'
-  #       uses: 'rchougule/local-action@split_actions'
-  #       with:
-  #         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-  #         build-name: 'this is mac -- build_info -- os'
-  #         project-name: 'some project name'
-  #         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  #     - name: 'fetching local'
-  #       uses: rchougule/local-action/setup-local@split_actions
-  #       with:
-  #         local-testing: 'start'
-  #         local-logging-level: false
-  #         local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
-  #     - name: 'checkout the repository'
-  #       uses: 'actions/checkout@v2'
-  #     - name: 'running npm install'
-  #       run: 'npm install'
-  #     - name: 'running http-server'
-  #       run: './node_modules/.bin/http-server -p 8099 &'
-  #     - name: 'run test'
-  #       run: 'node index.js'
-  #     - name: 'stopping local'
-  #       uses: 'rchougule/local-action/setup-local@split_actions'
-  #       with:
-  #         local-testing: stop
-  #         local-identifier: random
-  #         local-args: 'doesnt matter'
-  #     - name: 'running test again'
-  #       run: 'node another.js'
-  # windows-job:
-  #   name: 'windows job'
-  #   runs-on: windows-latest
-  #   steps:
-  #     - name: 'setting local env'
-  #       uses: 'rchougule/local-action@split_actions'
-  #       with:
-  #         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-  #         build-name: BUILD_INFO
-  #         project-name: REPO_NAME
-  #         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  #     - name: 'fetching local'
-  #       uses: rchougule/local-action/setup-local@split_actions
-  #       with:
-  #         local-testing: 'start'
-  #         local-logging-level: setup-logs
-  #         local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
-  #     - name: 'checkout the repository'
-  #       uses: 'actions/checkout@v2'
-  #     - name: 'running npm install'
-  #       run: 'npm install'
-  #     - name: 'running http-server'
-  #       run: './node_modules/.bin/http-server -p 8099 &'
-  #     - name: 'run test'
-  #       run: 'node index.js'
-  #     - name: 'stopping local'
-  #       uses: 'rchougule/local-action/setup-local@split_actions'
-  #       with:
-  #         local-testing: stop
-  #         local-identifier: random
-  #         local-args: 'doesnt matter'
-  #     - name: 'running test again'
-  #       run: 'node another.js'
+  macos-job:
+    name: 'macos job'
+    runs-on: macos-latest
+    steps:
+      - name: 'setting local env'
+        uses: 'rchougule/github-actions@master'
+        with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          build-name: 'this is mac -- build_info -- os'
+          project-name: 'some project name'
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: 'fetching local'
+        uses: rchougule/github-actions/setup-local@master
+        with:
+          local-testing: 'start'
+          local-logging-level: false
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
+      - name: 'run test'
+        run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/github-actions/setup-local@master'
+        with:
+          local-testing: stop
+          local-identifier: random
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node another.js'
+  windows-job:
+    name: 'windows job'
+    runs-on: windows-latest
+    steps:
+      - name: 'setting local env'
+        uses: 'rchougule/github-actions@master'
+        with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          build-name: BUILD_INFO
+          project-name: REPO_NAME
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: 'fetching local'
+        uses: rchougule/github-actions/setup-local@master
+        with:
+          local-testing: 'start'
+          local-logging-level: setup-logs
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
+      - name: 'run test'
+        run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/github-actions/setup-local@master'
+        with:
+          local-testing: stop
+          local-identifier: random
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node another.js'
