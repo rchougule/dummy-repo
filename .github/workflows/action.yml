@@ -15,7 +15,7 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@master
         with:
-          local-testing: 'stop'
+          local-testing: 'start'
           local-logging-level: all-logs
           local-identifier: 'random'
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
@@ -28,6 +28,12 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
+        uses: 'rchougule/github-actions/setup-local@master'
+        with:
+          local-testing: stop
+          local-identifier: random
+          local-args: 'doesnt matter'
+      - name: 'stopping local again'
         uses: 'rchougule/github-actions/setup-local@master'
         with:
           local-testing: stop
@@ -83,7 +89,7 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@master
         with:
-          local-testing: 'stop'
+          local-testing: 'start'
           local-identifier: random
           local-logging-level: setup-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
