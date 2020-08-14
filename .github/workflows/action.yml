@@ -15,7 +15,7 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@master
         with:
-          local-testing: 'start'
+          local-testing: 'stop'
           local-logging-level: all-logs
           local-identifier: 'random'
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
@@ -83,7 +83,7 @@ jobs:
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@master
         with:
-          local-testing: 'start'
+          local-testing: 'stop'
           local-identifier: random
           local-logging-level: setup-logs
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine'
