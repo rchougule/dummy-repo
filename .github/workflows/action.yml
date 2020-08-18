@@ -9,13 +9,13 @@ jobs:
       - name: 'setting local env'
         uses: 'rchougule/github-actions@master'
         with:
-          # username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
-          # access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@master
         with:
-          local-testing: 'start'
+          # local-testing: 'start'
           local-logging-level: all-logs
           local-identifier: 'random'
           local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
