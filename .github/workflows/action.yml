@@ -6,7 +6,8 @@ jobs:
     name: 'ubuntu github'
     # runs-on: [self-hosted, 'macOS', 'X64']
     # runs-on: [self-hosted, 'Linux', 'X64']
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: [self-hosted, 'Linux', 'X64', 'second']
     steps:
       - name: 'setting local env'
         uses: 'rchougule/github-actions@self_hosted_fixes'
