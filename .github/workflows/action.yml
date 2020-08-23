@@ -24,6 +24,10 @@ jobs:
           local-args: --only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd
       - name: 'checkout the repository'
         uses: 'actions/checkout@v2'
+      - name: 'setup node'
+        uses: 'actions/setup-node'
+        with:
+          node-version: 12
       - name: 'running npm install'
         run: 'npm install'
       - name: 'running http-server'
