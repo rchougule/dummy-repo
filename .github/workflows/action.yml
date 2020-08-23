@@ -3,7 +3,7 @@ on: [pull_request, release]
 
 jobs:
   ubuntu-job:
-    name: 'win github'
+    name: 'mac github'
     # runs-on: [self-hosted, 'macOS', 'X64']
     # runs-on: [self-hosted, 'Linux', 'X64']
     # runs-on: [self-hosted, 'Windows', 'X64']
