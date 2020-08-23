@@ -4,16 +4,16 @@ on: [pull_request, release]
 jobs:
   ubuntu-job:
     name: 'mac github'
-    # runs-on: [self-hosted, 'macOS', 'X64']
+    runs-on: [self-hosted, 'macOS', 'X64']
     # runs-on: [self-hosted, 'Linux', 'X64']
     # runs-on: [self-hosted, 'Windows', 'X64']
     # runs-on: windows-latest
     # runs-on: ubuntu-latest
     # runs-on: [self-hosted, 'Linux', 'X64', 'second']
     # runs-on: macos-latest
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
+    # runs-on: ${{ matrix.operating-system }}
+    # strategy:
+    #   matrix:
         operating-system: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - name: 'setting local env'
