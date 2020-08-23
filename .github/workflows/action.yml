@@ -5,8 +5,8 @@ jobs:
   ubuntu-job:
     name: 'ubuntu github'
     # runs-on: [self-hosted, 'macOS', 'X64']
-    runs-on: [self-hosted, 'Linux', 'X64']
-    # runs-on: [self-hosted, 'Windows', 'X64']
+    # runs-on: [self-hosted, 'Linux', 'X64']
+    runs-on: [self-hosted, 'Windows', 'X64']
     # runs-on: windows-latest
     # runs-on: ubuntu-latest
     # runs-on: [self-hosted, 'Linux', 'X64', 'second']
