@@ -7,13 +7,13 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: 'setting local env'
-        uses: 'browserstack/github-actions@master'
+        uses: 'rchougule/github-actions@self_hosted_fixes'
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       - name: 'fetching local'
-        uses: browserstack/github-actions/setup-local@master
+        uses: rchougule/github-actions/setup-local@self_hosted_fixes
         with:
           local-testing: 'start'
           local-logging-level: all-logs
@@ -28,13 +28,13 @@ jobs:
       - name: 'run test'
         run: 'node index.js'
       - name: 'stopping local'
-        uses: 'browserstack/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@self_hosted_fixes'
         with:
           local-testing: stop
           local-identifier: random
           local-args: 'doesnt matter'
       - name: 'stopping local again'
-        uses: 'browserstack/github-actions/setup-local@master'
+        uses: 'rchougule/github-actions/setup-local@self_hosted_fixes'
         with:
           local-testing: stop
           local-identifier: random
