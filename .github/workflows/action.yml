@@ -4,8 +4,8 @@ on: [pull_request, release]
 jobs:
   ubuntu-job:
     name: 'mac self job'
-    runs-on: [self-hosted, 'macOS', 'X64']
-    # runs-on: [self-hosted, 'Linux', 'X64']
+    # runs-on: [self-hosted, 'macOS', 'X64']
+    runs-on: [self-hosted, 'Linux', 'X64']
     steps:
       - name: 'setting local env'
         uses: 'rchougule/github-actions@self_hosted_fixes'
@@ -42,41 +42,41 @@ jobs:
           local-args: 'doesnt matter'
       - name: 'running test again'
         run: 'node another.js'
-  #     - name: 'setting local env'
-  #       uses: 'browserstack/github-actions@master'
-  #       with:
-  #         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-  #         build-name: 'this is my ubuntu- build_inFO'
-  #         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  #     - name: 'fetching local'
-  #       uses: browserstack/github-actions/setup-local@master
-  #       with:
-  #         local-testing: 'start'
-  #         local-logging-level: all-logs
-  #         local-identifier: 'random'
-  #         local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
-  #     - name: 'checkout the repository'
-  #       uses: 'actions/checkout@v2'
-  #     - name: 'running npm install'
-  #       run: 'npm install'
-  #     - name: 'running http-server'
-  #       run: './node_modules/.bin/http-server -p 8099 &'
-  #     - name: 'run test'
-  #       run: 'node index.js'
-  #     - name: 'stopping local'
-  #       uses: 'browserstack/github-actions/setup-local@master'
-  #       with:
-  #         local-testing: stop
-  #         local-identifier: random
-  #         local-args: 'doesnt matter'
-  #     - name: 'stopping local again'
-  #       uses: 'browserstack/github-actions/setup-local@master'
-  #       with:
-  #         local-testing: stop
-  #         local-identifier: random
-  #         local-args: 'doesnt matter'
-  #     - name: 'running test again'
-  #       run: 'node another.js'
+      - name: 'setting local env'
+        uses: 'rchougule/github-actions@self_hosted_fixes'
+        with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          build-name: 'this is my ubuntu- build_inFO'
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: 'fetching local'
+        uses: rchougule/github-actions/setup-local@self_hosted_fixes
+        with:
+          local-testing: 'start'
+          local-logging-level: all-logs
+          local-identifier: 'random'
+          local-args: '--only-automate --daemon start --key jinga --local-identifier this-is-mine -z abcd'
+      - name: 'checkout the repository'
+        uses: 'actions/checkout@v2'
+      - name: 'running npm install'
+        run: 'npm install'
+      - name: 'running http-server'
+        run: './node_modules/.bin/http-server -p 8099 &'
+      - name: 'run test'
+        run: 'node index.js'
+      - name: 'stopping local'
+        uses: 'rchougule/github-actions/setup-local@self_hosted_fixes'
+        with:
+          local-testing: stop
+          local-identifier: random
+          local-args: 'doesnt matter'
+      - name: 'stopping local again'
+        uses: 'rchougule/github-actions/setup-local@self_hosted_fixes'
+        with:
+          local-testing: stop
+          local-identifier: random
+          local-args: 'doesnt matter'
+      - name: 'running test again'
+        run: 'node another.js'
   # macos-job:
   #   name: 'macos job'
   #   runs-on: macos-latest
