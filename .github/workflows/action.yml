@@ -3,8 +3,8 @@ on: [push, pull_request, release]
 
 jobs:
   ubuntu-job:
-    name: 'ubuntu job'
-    runs-on: self-hosted
+    name: 'mac self job'
+    runs-on: [self-hosted, 'macOS', 'X64']
     steps:
       - name: 'setting local env'
         uses: 'rchougule/github-actions@self_hosted_fixes'
