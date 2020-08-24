@@ -11,7 +11,7 @@ jobs:
     # runs-on: ubuntu-latest
     # runs-on: [self-hosted, 'Linux', 'X64', 'second']
     # runs-on: macos-latest
-    # runs-on: ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest, macos-latest, windows-latest]
