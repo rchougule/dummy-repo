@@ -21,7 +21,7 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           build-name: 'this is my ubuntu- build_inFO'
-          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          access-key: fakeaccesskey
       - name: 'fetching local'
         uses: rchougule/github-actions/setup-local@self_hosted_fixes
         with:
