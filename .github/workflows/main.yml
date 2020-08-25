@@ -28,10 +28,10 @@ jobs:
     #   run: |
     #     ruby -v
 
-    - name: Use Ruby
-      uses: actions/setup-ruby@v1
-      uses: actions/checkout@v2
-      # uses: 'Frkx/dummy-repo/code_snippets@test_workflows'
+    # - name: Use Ruby
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+
       with:
         ruby-version: '2.6'
     - name: Run Hello.rb
