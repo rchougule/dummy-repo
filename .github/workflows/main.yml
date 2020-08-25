@@ -27,6 +27,11 @@ jobs:
     - name: Check Ruby version
       run: |
         ruby -v
+
+    - name: Use Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
     - name: Run Hello.rb
       run: |
         ruby hello.rb
