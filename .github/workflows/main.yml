@@ -36,6 +36,7 @@ jobs:
         ruby-version: '2.6'
     - name: Run Hello.rb
       run: |
+        gem install selenium-webdriver
         ruby hello.rb
 
 
