@@ -27,6 +27,9 @@ jobs:
     - name: Check Ruby version
       run: |
         ruby -v
+    - name: Run Hello.rb
+      run: |
+        ruby hello.rb
     # # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     # - uses: actions/checkout@v2
 
