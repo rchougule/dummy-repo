@@ -28,7 +28,7 @@ jobs:
         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
         build-name: This is a test Build  - BUILD_INFO
-        project-name: REPO_NAME - This is a test Project
+        project-name: REPO_NAME
 
 
     - uses: actions/checkout@v2
