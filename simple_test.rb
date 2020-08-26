@@ -9,11 +9,11 @@ projectName = ENV['BROWSERSTACK_PROJECT_NAME']
 
 # Input capabilities
 caps = Selenium::WebDriver::Remote::Capabilities.new
-caps['browser'] = 'Chrome'
-caps['os_version'] = '10'
-caps['resolution'] = '1920x1080'
-caps['os'] = 'Windows'
-caps['browser_version'] = '84.0'
+caps['browser'] = ''
+caps['os_version'] = ''
+caps['resolution'] = ''
+caps['os'] = ''
+caps['browser_version'] = ''
 caps['build'] = buildName
 caps['project'] = projectName
 driver = Selenium::WebDriver.for(:remote,
