@@ -25,8 +25,8 @@ jobs:
       with:
         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-        build-name: ${{ env.BROWSERSTACK_BUILD_NAME }}
-        project-name: ${{ env.BROWSERSTACK_PROJECT_NAME }}
+        build-name: BUILD_INFO
+        project-name: REPO_NAME
 
 
     - uses: actions/checkout@v2
