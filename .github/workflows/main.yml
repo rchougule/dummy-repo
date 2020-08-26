@@ -6,9 +6,9 @@ name: Test Build
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ test_workflows ]
   pull_request:
-    branches: [ master ]
+    # branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,6 +37,6 @@ jobs:
     - name: Run Hello.rb
       run: |
         gem install selenium-webdriver
-        ruby hello.rb
+        ruby simple_test.rb
 
 
