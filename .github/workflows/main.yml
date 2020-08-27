@@ -17,7 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,6 +30,13 @@ jobs:
         build-name: This is a test Build  - BUILD_INFO
         project-name: REPO_NAME
 
+    - name: 'Start BrowserStackLocal Tunnel'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-logging-level: all-logs
+        local-identifier: random
+
 
     - uses: actions/checkout@v2
     # - uses: actions/setup-ruby@v1
@@ -41,4 +48,8 @@ jobs:
         gem install selenium-webdriver
         ruby simple_test.rb
 
+    - name: 'Stop BrowserStackLocal'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
 
