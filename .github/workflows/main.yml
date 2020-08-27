@@ -56,5 +56,4 @@ jobs:
       uses: 'browserstack/github-actions/setup-local@master'
       with:
         local-testing: stop
-        local-args: '--proxy-host=117.204.254.171 --proxy-port=8080'
 
