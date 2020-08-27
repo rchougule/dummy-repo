@@ -51,9 +51,6 @@ jobs:
     #     ruby-version: '2.5.0'
     - name: Run Simple Ruby Automate Test
       run: |
-        cd /var/lib
-        sudo chmod -R a+w gems/
-        gem install selenium-webdriver
         ruby simple_test.rb
 
     - name: 'Stop BrowserStackLocal'
@@ -61,3 +58,6 @@ jobs:
       with:
         local-testing: stop
 
+   # cd /var/lib
+        # sudo chmod -R a+w gems/
+        # gem install selenium-webdriver
