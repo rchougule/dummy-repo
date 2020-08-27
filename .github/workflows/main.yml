@@ -8,7 +8,7 @@ on:
   # push:
   #   branches: [ test_workflows ]
   pull_request:
-    branches: [ test_workflows ]
+    branches: [ master ]
     # release:
     #   types: [released]
 
