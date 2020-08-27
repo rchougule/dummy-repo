@@ -35,3 +35,16 @@ driver.navigate.to "https://whatismyipaddress.com/"
 puts driver.title
 sleep 2
 driver.quit
+
+
+   # echo $PWD
+        # cd /var/lib
+        # sudo chmod -R a+w gems/
+        # echo $PWD
+        # cd
+        # cd /home/runner/work/dummy-repo/dummy-repo
+        # echo $PWD
+
+         # - uses: actions/setup-ruby@v1
+    #   with:
+    #     ruby-version: '2.5.0'
