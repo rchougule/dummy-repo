@@ -35,7 +35,7 @@ jobs:
       with:
         local-testing: start
         local-logging-level: all-logs
-        local-identifier: random
+        # local-identifier: random
 
 
     - uses: actions/checkout@v2
