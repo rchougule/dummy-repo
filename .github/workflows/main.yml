@@ -17,6 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
+    http_proxy: http://192.168.0.104:8888
     runs-on: self-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -38,7 +39,6 @@ jobs:
         project-name: REPO_NAME
 
     - name: 'Start BrowserStackLocal Tunnel'
-      http_proxy: http://192.168.0.104:8888
       uses: 'browserstack/github-actions/setup-local@master'
       with:
         local-testing: start
