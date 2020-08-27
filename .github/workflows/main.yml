@@ -41,7 +41,7 @@ jobs:
       with:
         local-testing: start
         local-logging-level: all-logs
-        local-args:
+        local-args: asdasds
         # local-identifier: random
 
 
