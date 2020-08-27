@@ -50,13 +50,6 @@ jobs:
     #     ruby-version: '2.5.0'
     - name: Run Simple Ruby Automate Test
       run: |
-        echo $PWD
-        cd /var/lib
-        sudo chmod -R a+w gems/
-        echo $PWD
-        cd
-        cd /home/runner/work/dummy-repo/dummy-repo
-        echo $PWD
         gem install selenium-webdriver
         ruby simple_test.rb
 
@@ -65,3 +58,11 @@ jobs:
       with:
         local-testing: stop
 
+
+   # echo $PWD
+        # cd /var/lib
+        # sudo chmod -R a+w gems/
+        # echo $PWD
+        # cd
+        # cd /home/runner/work/dummy-repo/dummy-repo
+        # echo $PWD
