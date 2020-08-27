@@ -30,5 +30,8 @@ puts driver.title
 sleep 1
 driver.navigate.to "http://localhost:5000"
 puts driver.title
-sleep 5
+sleep 2
+driver.navigate.to "https://whatismyipaddress.com/"
+puts driver.title
+sleep 2
 driver.quit
