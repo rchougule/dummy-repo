@@ -14,6 +14,7 @@ caps['os_version'] = ''
 caps['resolution'] = ''
 caps['os'] = ''
 caps['browser_version'] = ''
+caps['browserstack.local'] = 'true'
 caps['build'] = buildName
 caps['project'] = projectName
 driver = Selenium::WebDriver.for(:remote,
