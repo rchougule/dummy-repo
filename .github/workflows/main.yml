@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: BrowserStack Test Build
+name: BrowserStack Test Build 1
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -38,6 +38,7 @@ jobs:
         project-name: REPO_NAME
 
     - name: 'Start BrowserStackLocal Tunnel'
+      # https_proxy: http://206.190.140.68:443
       uses: 'browserstack/github-actions/setup-local@master'
       with:
         local-testing: start
