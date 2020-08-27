@@ -43,7 +43,6 @@ jobs:
         local-testing: start
         local-logging-level: all-logs
         local-identifier: stebtest
-        local-args: '--force-loc
 
 
     - uses: actions/checkout@v2
@@ -58,15 +57,3 @@ jobs:
       with:
         local-testing: stop
 
-
-   # echo $PWD
-        # cd /var/lib
-        # sudo chmod -R a+w gems/
-        # echo $PWD
-        # cd
-        # cd /home/runner/work/dummy-repo/dummy-repo
-        # echo $PWD
-
-         # - uses: actions/setup-ruby@v1
-    #   with:
-    #     ruby-version: '2.5.0'
