@@ -3,7 +3,7 @@ require 'selenium-webdriver'
 
 userName = ENV['BROWSERSTACK_USERNAME']
 accessKey = ENV['BROWSERSTACK_ACCESS_KEY']
-# localIdentifier = ENV['BROWSERSTACK_LOCAL_IDENTIFIER']
+localIdentifier = ENV['BROWSERSTACK_LOCAL_IDENTIFIER']
 buildName = ENV['BROWSERSTACK_BUILD_NAME']
 projectName = ENV['BROWSERSTACK_PROJECT_NAME']
 
@@ -15,7 +15,7 @@ caps['resolution'] = ''
 caps['os'] = ''
 caps['browser_version'] = ''
 caps['browserstack.local'] = 'true'
-caps['browserstack.localIdentifier'] = 'stebtest'
+caps['browserstack.localIdentifier'] = localIdentifier
 caps['build'] = buildName
 caps['project'] = projectName
 
