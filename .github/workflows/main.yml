@@ -55,7 +55,7 @@ jobs:
         cd /var/lib
         sudo chmod -R a+w gems/
         echo $PWD
-        cd ../../
+        cd ~/runner/work/dummy-repo/dummy-repo
         echo $PWD
         gem install selenium-webdriver
         ruby simple_test.rb
