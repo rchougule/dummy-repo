@@ -38,7 +38,7 @@ jobs:
         project-name: REPO_NAME
 
     - name: 'Start BrowserStackLocal Tunnel'
-      # https_proxy: http://206.190.140.68:443
+      http_proxy: http://192.168.0.104:8888
       uses: 'browserstack/github-actions/setup-local@master'
       with:
         local-testing: start
