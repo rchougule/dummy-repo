@@ -15,8 +15,10 @@ caps['resolution'] = ''
 caps['os'] = ''
 caps['browser_version'] = ''
 caps['browserstack.local'] = 'true'
+caps['browserstack.localIdentifier'] = 'stebtest'
 caps['build'] = buildName
 caps['project'] = projectName
+
 driver = Selenium::WebDriver.for(:remote,
   :url => "https://" + userName + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub",
   :desired_capabilities => caps)

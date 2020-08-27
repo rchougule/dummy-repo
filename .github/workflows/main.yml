@@ -5,10 +5,10 @@ name: BrowserStack Test Build
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  # push:
-  #   branches: [ test_workflows ]
-  pull_request:
-    branches: [ master ]
+  push:
+    branches: [ test_workflows ]
+  # pull_request:
+  #   branches: [ master ]
     # release:
     #   types: [released]
 
@@ -41,7 +41,6 @@ jobs:
       with:
         local-testing: start
         local-logging-level: all-logs
-        local-args:
         local-identifier: stebtest
 
 
