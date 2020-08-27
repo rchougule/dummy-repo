@@ -43,7 +43,7 @@ jobs:
         local-testing: start
         local-logging-level: all-logs
         local-identifier: stebtest
-        local-args: '--force-local'
+        local-args: '--force-loc
 
 
     - uses: actions/checkout@v2
