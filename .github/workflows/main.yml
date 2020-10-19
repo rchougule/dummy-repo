@@ -42,7 +42,7 @@ jobs:
       with:
         local-testing: start
         local-logging-level: all-logs
-        local-args: '--proxy-host=117.204.254.171 --proxy-port=8080'
+        # local-args: '--proxy-host=117.204.254.171 --proxy-port=8080'
 
 
     - uses: actions/checkout@v2
