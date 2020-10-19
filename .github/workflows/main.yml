@@ -31,7 +31,7 @@ jobs:
     # - run: nohup python -m SimpleHTTPServer 5000 &
 
     - name: 'BrowserStack Env Setup'
-      uses: 'browserstack/github-actions/setup-env@master'
+      uses: 'Archish27/github-actions/setup-env@master'
       with:
         username:  ${{ secrets.BROWSERSTACK_USERNAME }}
         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
@@ -39,7 +39,7 @@ jobs:
         project-name: REPO_NAME
 
     - name: 'Start BrowserStackLocal Tunnel'
-      uses: 'browserstack/github-actions/setup-local@master'
+      uses: 'Archish27/github-actions/setup-local@master'
       with:
         local-testing: start
         local-logging-level: all-logs
@@ -54,7 +54,7 @@ jobs:
         ruby simple_test.rb
 
     - name: 'Stop BrowserStackLocal'
-      uses: 'browserstack/github-actions/setup-local@master'
+      uses: 'Archish27/github-actions/setup-local@master'
       with:
         local-testing: stop
 
