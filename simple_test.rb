@@ -18,6 +18,7 @@ caps['browserstack.local'] = 'true'
 caps['browserstack.localIdentifier'] = localIdentifier
 caps['build'] = buildName
 caps['project'] = projectName
+puts userName
 
 driver = Selenium::WebDriver.for(:remote,
   :url => "https://" + userName + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub",
