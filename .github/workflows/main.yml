@@ -1,0 +1,63 @@
+# This is a basic workflow to help you get started with Actions
+
+name: BrowserStack Build -
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ test_workflows ]
+  # pull_request:
+  #   branches: [ master ]
+    # release:
+    #   types: [released]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+
+
+#different types of runners - https://github.com/actions/virtual-environments
+    # runs-on: self-hosted
+    # runs-on: macos-lates
+    runs-on: windows-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # - uses: actions/checkout@v2
+    # - uses: actions/setup-python@v2
+      # with:
+      #   python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      #   architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    # - run: nohup python -m http.server 5000 &
+    # - run: nohup python -m SimpleHTTPServer 5000 &
+
+    - name: 'BrowserStack Env Setup'
+      uses: 'Archish27/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        build-name: This is a test Build  - BUILD_INFO
+        project-name: REPO_NAME
+
+    - name: 'Start BrowserStackLocal Tunnel'
+      uses: 'Archish27/github-actions/setup-local@master'
+      with:
+        local-testing: start
+        local-logging-level: all-logs
+        # local-args: '--proxy-host=117.204.254.171 --proxy-port=8080'
+
+
+    - uses: actions/checkout@v2
+
+    - name: Run Simple Ruby Automate Test
+      run: |
+        sudo gem install selenium-webdriver
+        ruby simple_test.rb
+
+    - name: 'Stop BrowserStackLocal'
+      uses: 'Archish27/github-actions/setup-local@master'
+      with:
+        local-testing: stop
+
